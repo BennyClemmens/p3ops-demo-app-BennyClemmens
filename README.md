@@ -616,4 +616,35 @@ info: Microsoft.Hosting.Lifetime[0]
 
 1. Clone the repository
 2. Restore the packages: `dotnet restore src/Server/Server.csproj` and `dotnet restore tests/Domain.Tests/Domain.Tests.csproj`
+
+```bash
+benny@fujitsuwin MINGW64 /c/DATA/GIT/DEVOPS/p3ops-demo-app-BennyClemmens (main)
+$ dotnet restore src/Server/Server.csproj
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+
+benny@fujitsuwin MINGW64 /c/DATA/GIT/DEVOPS/p3ops-demo-app-BennyClemmens (main)
+$ dotnet restore tests/Domain.Tests/Domain.Tests.csproj
+  Determining projects to restore...
+  Restored C:\DATA\GIT\DEVOPS\p3ops-demo-app-BennyClemmens\tests\Domain.Tests\Domain.Tests.csproj (in 31.14 sec).
+  1 of 2 projects are up-to-date for restore.
+```
+
 3. Run the unit tests for the domain: `dotnet test tests/Domain.Tests/Domain.Tests.csproj`
+
+```bash
+benny@fujitsuwin MINGW64 /c/DATA/GIT/DEVOPS/p3ops-demo-app-BennyClemmens (main)
+$ dotnet test tests/Domain.Tests/Domain.Tests.csproj
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Domain -> C:\DATA\GIT\DEVOPS\p3ops-demo-app-BennyClemmens\src\Domain\bin\Debug\net6.0\Domain.dll
+  Domain.Tests -> C:\DATA\GIT\DEVOPS\p3ops-demo-app-BennyClemmens\tests\Domain.Tests\bin\Debug\net6.0\Domain.Tests.dll
+Test run for C:\DATA\GIT\DEVOPS\p3ops-demo-app-BennyClemmens\tests\Domain.Tests\bin\Debug\net6.0\Domain.Tests.dll (.NETCoreApp,Version=v6.0)
+Microsoft (R) Test Execution Command Line Tool Version 17.3.3 (x64)
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+
+Passed!  - Failed:     0, Passed:    74, Skipped:     0, Total:    74, Duration: 162 ms - Domain.Tests.dll (net6.0)
+```
