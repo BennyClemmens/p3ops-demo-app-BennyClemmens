@@ -137,6 +137,86 @@ This project is a very simple e-commerce website for sports products.
 > These steps assume that you have a SQL Server instance running on your machine. If not, you can use the [SQL Server Docker image](https://hub.docker.com/_/microsoft-mssql-server) to run one. Make sure to set the correct connection string of the SQL Server instance in `src/Server/appsettings.Development.json`.
 
 1. Clone the repository
+
+```bash
+benny@fujitsuwin MINGW64 /c/DATA/GIT/DEVOPS
+$ git clone https://github.com/HoGentTIN/p3ops-demo-app.git
+Cloning into 'p3ops-demo-app'...
+remote: Enumerating objects: 184, done.
+remote: Counting objects: 100% (37/37), done.
+remote: Compressing objects: 100% (31/31), done.
+remote: Total 184 (delta 13), reused 6 (delta 6), pack-reused 147 (from 1)
+Receiving objects: 100% (184/184), 55.83 KiB | 985.00 KiB/s, done.
+Resolving deltas: 100% (38/38), done.
+
+benny@fujitsuwin MINGW64 /c/DATA/GIT/DEVOPS
+$ mv p3ops-demo-app/ p3ops-demo-app-BennyClemmens/
+
+benny@fujitsuwin MINGW64 /c/DATA/GIT/DEVOPS/p3ops-demo-app-BennyClemmens (main)
+$ git remote remove origin
+
+benny@fujitsuwin MINGW64 /c/DATA/GIT/DEVOPS/p3ops-demo-app-BennyClemmens (main)
+$ git remote add origin https://github.com/BennyClemmens/p3ops-demo-app-BennyClemmens.git
+
+benny@fujitsuwin MINGW64 /c/DATA/GIT/DEVOPS/p3ops-demo-app-BennyClemmens (main)
+$ git push -u origin
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin main
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+benny@fujitsuwin MINGW64 /c/DATA/GIT/DEVOPS/p3ops-demo-app-BennyClemmens (main)
+$ git push --set-upstream origin main
+Enumerating objects: 184, done.
+Counting objects: 100% (184/184), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (141/141), done.
+Writing objects: 100% (184/184), 55.84 KiB | 55.84 MiB/s, done.
+Total 184 (delta 38), reused 184 (delta 38), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (38/38), done.
+To https://github.com/BennyClemmens/p3ops-demo-app-BennyClemmens.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+```
+
+```bash
+benny@fujitsuwin MINGW64 /c/DATA/GIT/DEVOPS/p3ops-demo-app-BennyClemmens (main)
+$ cat src/Server/appsettings.Development.json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "ConnectionStrings": {
+    "SqlDatabase": "Server=(localdb)\\mssqllocaldb;Database=SportStore;Trusted_Connection=True;"
+  }
+}
+```
+
+```bash
+benny@fujitsuwin MINGW64 /c/DATA/GIT/DEVOPS/p3ops-demo-app-BennyClemmens (main)
+$ cat src/Server/appsettings.Development.json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "ConnectionStrings": {
+    "SqlDatabase": "Server=localhost\\SQLEXPRESS01;Database=master;Trusted_Connection=True;"
+  }
+}
+```
+
 2. Restore the packages: `dotnet restore src/Server/Server.csproj`
 3. Start the server: `dotnet run watch --project src/Server/Server.csproj`
 
