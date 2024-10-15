@@ -5,6 +5,32 @@ This project is a very simple e-commerce website for sports products.
 ## Requirements
 
 - [.NET 6.0 SDK](https://dotnet.microsoft.com/en-us/download)
+
+   ```bash
+   PS C:\Windows\system32> winget search Microsoft.DotNet.SDK
+   Name                           Id                           Version               Source
+   -----------------------------------------------------------------------------------------
+   Microsoft .NET SDK 3.1         Microsoft.DotNet.SDK.3_1     3.1.426               winget
+   Microsoft .NET SDK 5.0         Microsoft.DotNet.SDK.5       5.0.408               winget
+   Microsoft .NET SDK 6.0         Microsoft.DotNet.SDK.6       6.0.427               winget
+   Microsoft .NET SDK 7.0         Microsoft.DotNet.SDK.7       7.0.410               winget
+   Microsoft .NET SDK 8.0         Microsoft.DotNet.SDK.8       8.0.403               winget
+   Microsoft .NET SDK 9.0 Preview Microsoft.DotNet.SDK.Preview 9.0.100-rc.2.24474.11 winget
+   PS C:\Windows\system32> winget install --id Microsoft.DotNet.SDK --source winget
+   No package found matching input criteria.
+   PS C:\Windows\system32> winget install --id Microsoft.DotNet.SDK.6 --source winget
+   Found Microsoft .NET SDK 6.0 [Microsoft.DotNet.SDK.6] Version 6.0.427
+   This application is licensed to you by its owner.
+   Microsoft is not responsible for, nor does it grant any licenses to, third-party packages.
+   Downloading https://dotnetcli.azureedge.net/dotnet/Sdk/6.0.427/dotnet-sdk-6.0.427-win-x64.exe
+   ██████████████████████████████   195 MB /  195 MB
+   Successfully verified installer hash
+   Starting package install...
+   Successfully installed
+   ```
+
+   ![001_installing_dotnet6](img/001_installing_dotnet6.PNG)
+
 - [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 
 ## How to run in development
