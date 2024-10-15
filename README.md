@@ -126,6 +126,10 @@ This project is a very simple e-commerce website for sports products.
 
    ![005_connect](img/005_connect.PNG)
 
+   `Note: trust the certificate or else ...`
+
+   ![007_certificate](img/007_certificate.PNG)
+
    ![006_connected](img/006_connected.PNG)
 
 ## How to run in development
