@@ -70,6 +70,7 @@ This project is a very simple e-commerce website for sports products.
    ```
 
    ```Installing the correct language pack ...```
+
    ![002_english_language_pack](img/002_english_language_pack.PNG)
 
    ```bash
@@ -256,6 +257,347 @@ Use 'dotnet --help' to see available commands or visit: https://aka.ms/dotnet-cl
 ```
 
 3. Start the server: `dotnet run watch --project src/Server/Server.csproj`
+
+```bash
+benny@fujitsuwin MINGW64 /c/DATA/GIT/DEVOPS/p3ops-demo-app-BennyClemmens (main)
+$ dotnet run watch --project src/Server/Server.csproj
+Building...
+C:\DATA\GIT\DEVOPS\p3ops-demo-app-BennyClemmens\src\Server\Startup.cs(45,17): warning CS0618: 'FluentValidationMvcConfiguration.RegisterValidatorsFromAssemblyContaining<T>(Func<AssemblyScanner.AssemblyScanResult, bool>, ServiceLifetime, bool)' is obsolete: 'RegisterValidatorsFromAssemblyContaining is deprecated. Call services.AddValidatorsFromAssemblyContaining<T> instead, which has the same effect. See https://github.com/FluentValidation/FluentValidation/issues/1963' [C:\DATA\GIT\DEVOPS\p3ops-demo-app-BennyClemmens\src\Server\Server.csproj]
+C:\DATA\GIT\DEVOPS\p3ops-demo-app-BennyClemmens\src\Server\Startup.cs(46,17): warning CS0618: 'FluentValidationAutoValidationConfiguration.ImplicitlyValidateChildProperties' is obsolete: 'Implicit validation of child properties deprecated and will be removed in a future release. Please use SetValidator instead. For details see https://github.com/FluentValidation/FluentValidation/issues/1960' [C:\DATA\GIT\DEVOPS\p3ops-demo-app-BennyClemmens\src\Server\Server.csproj]
+C:\DATA\GIT\DEVOPS\p3ops-demo-app-BennyClemmens\src\Server\Startup.cs(43,13): warning CS0618: 'FluentValidationMvcExtensions.AddFluentValidation(IMvcBuilder, Action<FluentValidationMvcConfiguration>)' is obsolete: 'Calling AddFluentValidation() is deprecated. Call services.AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters() instead, which has the same effect. For details see https://github.com/FluentValidation/FluentValidation/issues/1965' [C:\DATA\GIT\DEVOPS\p3ops-demo-app-BennyClemmens\src\Server\Server.csproj]
+warn: Microsoft.EntityFrameworkCore.Model.Validation[10400]
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+fail: Microsoft.EntityFrameworkCore.Database.Command[20102]
+      Failed executing DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+      IF SERVERPROPERTY('EngineEdition') <> 5
+      BEGIN
+          ALTER DATABASE [master] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+      END;
+crit: Microsoft.AspNetCore.Hosting.Diagnostics[6]
+      Application startup exception
+      Microsoft.Data.SqlClient.SqlException (0x80131904): Option 'SINGLE_USER' cannot be set in database 'master'.
+         at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+         at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+         at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+         at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+         at Microsoft.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean isAsync, Int32 timeout, Boolean asyncWrite)
+         at Microsoft.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String methodName)
+         at Microsoft.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+         at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteNonQuery(RelationalCommandParameterObject parameterObject)
+         at Microsoft.EntityFrameworkCore.Migrations.MigrationCommand.ExecuteNonQuery(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+         at Microsoft.EntityFrameworkCore.Migrations.Internal.MigrationCommandExecutor.ExecuteNonQuery(IEnumerable`1 migrationCommands, IRelationalConnection connection)
+         at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerDatabaseCreator.Delete()
+         at Microsoft.EntityFrameworkCore.Storage.RelationalDatabaseCreator.EnsureDeleted()
+         at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureDeleted()
+         at Persistence.SportStoreDataInitializer.SeedData() in C:\DATA\GIT\DEVOPS\p3ops-demo-app-BennyClemmens\src\Persistence\SportStoreDataInitializer.cs:line 16
+         at Server.Startup.Configure(IApplicationBuilder app, IWebHostEnvironment env, SportStoreDataInitializer dataInitializer) in C:\DATA\GIT\DEVOPS\p3ops-demo-app-BennyClemmens\src\Server\Startup.cs:line 76
+         at System.RuntimeMethodHandle.InvokeMethod(Object target, Span`1& arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+         at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+         at Microsoft.AspNetCore.Hosting.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+         at Microsoft.AspNetCore.Hosting.ConfigureBuilder.<>c__DisplayClass4_0.<Build>b__0(IApplicationBuilder builder)
+         at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass15_0.<UseStartup>b__1(IApplicationBuilder app)
+         at Microsoft.AspNetCore.Mvc.Filters.MiddlewareFilterBuilderStartupFilter.<>c__DisplayClass0_0.<Configure>g__MiddlewareFilterBuilder|0(IApplicationBuilder builder)
+         at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+         at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+      ClientConnectionId:b9fd1afc-4617-4f4a-a9ef-41a3fe69d714
+      Error Number:5058,State:5,Class:16
+Unhandled exception. Microsoft.Data.SqlClient.SqlException (0x80131904): Option 'SINGLE_USER' cannot be set in database 'master'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean isAsync, Int32 timeout, Boolean asyncWrite)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String methodName)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteNonQuery(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Migrations.MigrationCommand.ExecuteNonQuery(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.MigrationCommandExecutor.ExecuteNonQuery(IEnumerable`1 migrationCommands, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerDatabaseCreator.Delete()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabaseCreator.EnsureDeleted()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureDeleted()
+   at Persistence.SportStoreDataInitializer.SeedData() in C:\DATA\GIT\DEVOPS\p3ops-demo-app-BennyClemmens\src\Persistence\SportStoreDataInitializer.cs:line 16
+   at Server.Startup.Configure(IApplicationBuilder app, IWebHostEnvironment env, SportStoreDataInitializer dataInitializer) in C:\DATA\GIT\DEVOPS\p3ops-demo-app-BennyClemmens\src\Server\Startup.cs:line 76
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Span`1& arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.<>c__DisplayClass4_0.<Build>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass15_0.<UseStartup>b__1(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Mvc.Filters.MiddlewareFilterBuilderStartupFilter.<>c__DisplayClass0_0.<Configure>g__MiddlewareFilterBuilder|0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Server.Program.Main(String[] args) in C:\DATA\GIT\DEVOPS\p3ops-demo-app-BennyClemmens\src\Server\Program.cs:line 10
+ClientConnectionId:b9fd1afc-4617-4f4a-a9ef-41a3fe69d714
+Error Number:5058,State:5,Class:16
+```
+
+`changing the database name after making a new database`
+
+```bash
+benny@fujitsuwin MINGW64 /c/DATA/GIT/DEVOPS/p3ops-demo-app-BennyClemmens (main)
+$ cat src/Server/appsettings.Development.json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "ConnectionStrings": {
+    "SqlDatabase": "Server=localhost\\SQLEXPRESS01;Database=test;Trusted_Connection=True;"
+  }
+}
+```
+
+```bash
+benny@fujitsuwin MINGW64 /c/DATA/GIT/DEVOPS/p3ops-demo-app-BennyClemmens (main)
+$ dotnet run watch --project src/Server/Server.csproj
+Building...
+C:\DATA\GIT\DEVOPS\p3ops-demo-app-BennyClemmens\src\Server\Startup.cs(46,17): warning CS0618: 'FluentValidationMvcConfiguration.RegisterValidatorsFromAssemblyContaining<T>(Func<AssemblyScanner.AssemblyScanResult, bool>, ServiceLifetime, bool)' is obsolete: 'RegisterValidatorsFromAssemblyContaining is deprecated. Call services.AddValidatorsFromAssemblyContaining<T> instead, which has the same effect. See https://github.com/FluentValidation/FluentValidation/issues/1963' [C:\DATA\GIT\DEVOPS\p3ops-demo-app-BennyClemmens\src\Server\Server.csproj]
+C:\DATA\GIT\DEVOPS\p3ops-demo-app-BennyClemmens\src\Server\Startup.cs(48,17): warning CS0618: 'FluentValidationAutoValidationConfiguration.ImplicitlyValidateChildProperties' is obsolete: 'Implicit validation of child properties deprecated and will be removed in a future release. Please use SetValidator instead. For details see https://github.com/FluentValidation/FluentValidation/issues/1960' [C:\DATA\GIT\DEVOPS\p3ops-demo-app-BennyClemmens\src\Server\Server.csproj]
+C:\DATA\GIT\DEVOPS\p3ops-demo-app-BennyClemmens\src\Server\Startup.cs(43,13): warning CS0618: 'FluentValidationMvcExtensions.AddFluentValidation(IMvcBuilder, Action<FluentValidationMvcConfiguration>)' is obsolete: 'Calling AddFluentValidation() is deprecated. Call services.AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters() instead, which has the same effect. For details see https://github.com/FluentValidation/FluentValidation/issues/1965' [C:\DATA\GIT\DEVOPS\p3ops-demo-app-BennyClemmens\src\Server\Server.csproj]
+warn: Microsoft.EntityFrameworkCore.Model.Validation[10400]
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: https://localhost:5001
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5000
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\DATA\GIT\DEVOPS\p3ops-demo-app-BennyClemmens\src\Server
+```
+
+![008_5001_running](img/008_5001_running.PNG)
+
+`https on 5000 gives ssl error on edge, forwards to 5001 on http`
+
+![009_5000_ssl](img/009_5000_ssl.PNG)
+
+`exiting:`
+
+```bash
+info: EntityFrameworkCore.Triggered.TriggerSession[0]
+      Invoking trigger: Persistence.Triggers.OnBeforeEntitySaved as EntityFrameworkCore.Triggered.IBeforeSaveTrigger`1[Domain.Common.Entity]
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+```
 
 ## How to run in production
 

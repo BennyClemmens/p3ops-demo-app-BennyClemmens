@@ -41,9 +41,13 @@ namespace Server
             });
 
             services.AddControllersWithViews().AddFluentValidation(config =>
+            // services.AddControllersWithViews().AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters(config =>
             {
                 config.RegisterValidatorsFromAssemblyContaining<ProductDto.Mutate.Validator>();
+                // config.AddValidatorsFromAssemblyContaining<ProductDto.Mutate.Validator>();
                 config.ImplicitlyValidateChildProperties = true;
+                // config.SetValidator = true;
+
             });
             services.AddSwaggerGen(c =>
             {
