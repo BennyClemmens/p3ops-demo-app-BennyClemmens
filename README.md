@@ -33,6 +33,101 @@ This project is a very simple e-commerce website for sports products.
 
 - [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 
+   ```bash
+   PS C:\Windows\system32> winget search Microsoft.SQLServer
+   Name                                    Id                                    Version        Source
+   ----------------------------------------------------------------------------------------------------
+   Microsoft SQL Server 2012 Native Client Microsoft.SQLServer.2012.NativeClient 11.4.7001.0    winget
+   Microsoft SQL Server 2017 Developer     Microsoft.SQLServer.2017.Developer    14.0.1000.169  winget
+   Microsoft SQL Server 2017 Express       Microsoft.SQLServer.2017.Express      14.0.1000.169  winget
+   Microsoft SQL Server 2019 Developer     Microsoft.SQLServer.2019.Developer    15.2204.5490.2 winget
+   Microsoft SQL Server 2019 Express       Microsoft.SQLServer.2019.Express      15.2204.5490.2 winget
+   Microsoft SQL Server 2022 Developer     Microsoft.SQLServer.2022.Developer    16.0.1000.6    winget
+   Microsoft SQL Server 2022 Express       Microsoft.SQLServer.2022.Express      16.0.1000.6    winget
+   Microsoft SQL Server Management Studio  Microsoft.SQLServerManagementStudio   20.2           winget
+   PS C:\Windows\system32> winget install --id Microsoft.SQLServer.2022.Express --source winget
+   Found Microsoft SQL Server 2022 Express [Microsoft.SQLServer.2022.Express] Version 16.0.1000.6
+   This application is licensed to you by its owner.
+   Microsoft is not responsible for, nor does it grant any licenses to, third-party packages.
+   Downloading https://download.microsoft.com/download/5/1/4/5145fe04-4d30-4b85-b0d1-39533663a2f1/SQL2022-SSEI-Expr.exe
+   ██████████████████████████████  4.09 MB / 4.09 MB
+   Successfully verified installer hash
+   Starting package install...
+   ```
+
+   ```bash
+   Microsoft (R) SQL Server Installer
+   Copyright (c) 2022 Microsoft.  All rights reserved.
+
+
+   Your language Nederlands (België) (nl-BE) is not supported. Continue in English?
+
+   See this for more information: https://docs.microsoft.com/sql/sql-server/install/local-language-versions-in-sql-server
+
+
+   For more information use /? or /Help.
+   Installer failed with exit code: 1009
+   ```
+
+   ```Installing the correct language pack ...```
+   ![002_english_language_pack](img/002_english_language_pack.PNG)
+
+   ```bash
+   Microsoft (R) SQL Server Installer
+   Copyright (c) 2022 Microsoft.  All rights reserved.
+
+   Operation finished with result: Success
+
+   Installation has completed successfully!
+   INSTANCE NAME
+         SQLEXPRESS01
+
+   SQL ADMINISTRATORS
+         FUJITSUWIN\benny
+
+   FEATURES INSTALLED
+         SQLENGINE
+
+   VERSION
+         16.0.1000.6, RTM
+
+   CONNECTION STRING
+         Server=localhost\SQLEXPRESS01;Database=master;Trusted_Connection=True;
+
+   SQL SERVER INSTALL LOG FOLDER
+         C:\Program Files\Microsoft SQL Server\160\Setup Bootstrap\Log\20241015_104420
+
+   INSTALLATION MEDIA FOLDER
+         C:\SQL2022\Express_ENU
+
+   INSTALLATION RESOURCES FOLDER
+         C:\Program Files\Microsoft SQL Server\160\SSEI\Resources
+
+   Successfully installed
+   ```
+
+- SSMS
+
+   ```bash
+   PS C:\Windows\system32> winget install --id Microsoft.SQLServerManagementStudio --source winget
+   Found Microsoft SQL Server Management Studio [Microsoft.SQLServerManagementStudio] Version 20.2
+   This application is licensed to you by its owner.
+   Microsoft is not responsible for, nor does it grant any licenses to, third-party packages.
+   Downloading https://download.microsoft.com/download/9/b/e/9bee9f00-2ee2-429a-9462-c9bc1ce14c28/SSMS-Setup-ENU.exe
+   ██████████████████████████████   473 MB /  473 MB
+   Successfully verified installer hash
+   Starting package install...
+   Successfully installed
+   ```
+
+   ![004_ssms](img/004_ssms.PNG)
+
+   `Connecting with SSMS to verify running SQL Server`
+
+   ![005_connect](img/005_connect.PNG)
+
+   ![006_connected](img/006_connected.PNG)
+
 ## How to run in development
 
 > These steps assume that you have a SQL Server instance running on your machine. If not, you can use the [SQL Server Docker image](https://hub.docker.com/_/microsoft-mssql-server) to run one. Make sure to set the correct connection string of the SQL Server instance in `src/Server/appsettings.Development.json`.
