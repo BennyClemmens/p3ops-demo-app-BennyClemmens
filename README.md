@@ -218,6 +218,43 @@ $ cat src/Server/appsettings.Development.json
 ```
 
 2. Restore the packages: `dotnet restore src/Server/Server.csproj`
+
+`Note: restart the terminal to pick up the donetcommand in the path`
+
+```bash
+benny@fujitsuwin MINGW64 /c/DATA/GIT/DEVOPS/p3ops-demo-app-BennyClemmens (main)
+$ dotnet restore src/Server/Server.csproj
+
+Welcome to .NET 6.0!
+---------------------
+SDK Version: 6.0.427
+
+Telemetry
+---------
+The .NET tools collect usage data in order to help us improve your experience. It is collected by Microsoft and shared with the community. You can opt-out of telemetry by setting the DOTNET_CLI_TELEMETRY_OPTOUT environment variable to '1' or 'true' using your favorite shell.
+
+Read more about .NET CLI Tools telemetry: https://aka.ms/dotnet-cli-telemetry
+
+----------------
+Installed an ASP.NET Core HTTPS development certificate.
+To trust the certificate run 'dotnet dev-certs https --trust' (Windows and macOS only).
+Learn about HTTPS: https://aka.ms/dotnet-https
+----------------
+Write your first app: https://aka.ms/dotnet-hello-world
+Find out what's new: https://aka.ms/dotnet-whats-new
+Explore documentation: https://aka.ms/dotnet-docs
+Report issues and find source on GitHub: https://github.com/dotnet/core
+Use 'dotnet --help' to see available commands or visit: https://aka.ms/dotnet-cli
+--------------------------------------------------------------------------------------
+  Determining projects to restore...
+  Restored C:\DATA\GIT\DEVOPS\p3ops-demo-app-BennyClemmens\src\Shared\Shared.csproj (in 6.91 sec).
+  Restored C:\DATA\GIT\DEVOPS\p3ops-demo-app-BennyClemmens\src\Domain\Domain.csproj (in 520 ms).
+  Restored C:\DATA\GIT\DEVOPS\p3ops-demo-app-BennyClemmens\src\Persistence\Persistence.csproj (in 13.53 sec).
+  Restored C:\DATA\GIT\DEVOPS\p3ops-demo-app-BennyClemmens\src\Services\Services.csproj (in 26.27 sec).
+  Restored C:\DATA\GIT\DEVOPS\p3ops-demo-app-BennyClemmens\src\Server\Server.csproj (in 26.27 sec).
+  Restored C:\DATA\GIT\DEVOPS\p3ops-demo-app-BennyClemmens\src\Client\Client.csproj (in 26.27 sec).
+```
+
 3. Start the server: `dotnet run watch --project src/Server/Server.csproj`
 
 ## How to run in production
