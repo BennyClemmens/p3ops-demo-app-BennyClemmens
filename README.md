@@ -31,6 +31,30 @@ This project is a very simple e-commerce website for sports products.
 
    ![001_installing_dotnet6](img/001_installing_dotnet6.PNG)
 
+   ```bash
+   Benny@FLAB2021 MINGW64 /c/DATA/GIT/DEVOPS/p3ops-demo-app-BennyClemmens (main)
+   $ dotnet --version
+   8.0.403
+
+   Benny@FLAB2021 MINGW64 /c/DATA/GIT/DEVOPS/p3ops-demo-app-BennyClemmens (main)
+   $ dotnet --list-sdks
+   6.0.427 [C:\Program Files\dotnet\sdk]
+   8.0.403 [C:\Program Files\dotnet\sdk]
+
+   Benny@FLAB2021 MINGW64 /c/DATA/GIT/DEVOPS/p3ops-demo-app-BennyClemmens (main)
+   $ dotnet --list-runtimes
+   Microsoft.AspNetCore.App 6.0.35 [C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App]
+   Microsoft.AspNetCore.App 7.0.20 [C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App]
+   Microsoft.AspNetCore.App 8.0.10 [C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App]
+   Microsoft.NETCore.App 3.1.32 [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
+   Microsoft.NETCore.App 6.0.35 [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
+   Microsoft.NETCore.App 7.0.20 [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
+   Microsoft.NETCore.App 8.0.10 [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
+   Microsoft.WindowsDesktop.App 6.0.35 [C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App]
+   Microsoft.WindowsDesktop.App 7.0.20 [C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App]
+   Microsoft.WindowsDesktop.App 8.0.10 [C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App]
+   ```
+
 - [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 
    ```bash
